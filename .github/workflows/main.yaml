@@ -39,12 +39,12 @@ jobs:
              cd ./android
              chmod 777 gradlew
              ./gradlew assembleRelease
-#       - name: Upload application
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: app
-#           path: ./android/app/build/outputs
-#           retention-days: 2
+      - name: Upload application
+        uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: ./android/app/build/outputs
+          retention-days: 2
       - name: Push to Release
         uses: ncipollo/release-action@v1
         with:
