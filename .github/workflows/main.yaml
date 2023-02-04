@@ -19,7 +19,6 @@ jobs:
       - name: Install Java
         uses: actions/setup-java@v1
         with:
-        with:
           java-version: '12.x'
           cache: "gradle"
 
