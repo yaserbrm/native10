@@ -39,9 +39,15 @@ jobs:
              cd ./android
              chmod 777 gradlew
              ./gradlew assembleRelease
-      - name: Upload application
-        uses: actions/upload-artifact@v2
+#       - name: Upload application
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: app
+#           path: ./android/app/build/outputs
+#           retention-days: 2
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
         with:
-          name: app
-          path: ./android/app/build/outputs
-          retention-days: 2
+          artifacts: "android/app/build/outputs/apk/debug/*"
+          tag: v1.0.${{ github.run_number }}
+          token: ${{ secrets.TOKEN400 }} 
