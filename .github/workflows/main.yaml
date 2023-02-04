@@ -38,7 +38,7 @@ jobs:
         run: |
              cd ./android
              chmod 777 gradlew
-             ./gradlew assembleDebug
+             ./gradlew assembleRelease
       - name: Upload application
         uses: actions/upload-artifact@v2
         with:
