@@ -45,7 +45,7 @@ jobs:
 #           name: app
 #           path: ./android/app/build/outputs
 #           retention-days: 2
-      - name: Push to Releases
+      - name: Push to Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "android/app/build/outputs/apk/debug/*"
